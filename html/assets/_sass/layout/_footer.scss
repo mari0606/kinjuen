@@ -1,0 +1,83 @@
+@use "../foundation/import"as f;
+
+.l-footer {
+  background-color: #000000;
+  margin: 0 auto;
+
+  .p-footer {
+    position: relative;
+    margin: 0 auto;
+    padding: 8% 0 10%;
+    text-align: center;
+    
+
+    &__note {
+      color: f.$white;
+      font-size: 2rem;
+      letter-spacing: 0.2em;
+    }
+
+    &__tit {
+      color: f.$white;
+      font-size: 4.2rem;
+      padding-top: 1%;
+      letter-spacing: 0.3em;
+      
+    }
+
+    &__flex {
+      display: flex;
+      justify-content: center;
+      gap: 1%;
+      padding-top: 5%;
+
+      li {
+        writing-mode: vertical-lr;
+        font-size: 2rem;
+        text-align: start;
+        
+      }
+
+      a {
+        color: f.$white;
+
+        &:hover {
+          color: #939393;
+          transition: all .3s;
+        }
+      }
+    }
+  }
+
+  .p-copyright {
+    background-color: #000000;
+    color: f.$white;
+    font-size: 1rem;
+    padding: 1.2% 0;
+    text-align: center;
+  }
+}
+
+//----------------------------------------
+//768px
+//----------------------------------------
+@media screen and (max-width:768px) {
+  .l-footer {
+    .p-footer {
+      &__flex {
+        li {
+          font-size: 1.4rem;
+        }
+      }
+
+      &__tit {
+        font-size: 3.0rem;
+        padding-top: 0;
+      }
+
+      &__note {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

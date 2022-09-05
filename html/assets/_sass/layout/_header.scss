@@ -1,0 +1,157 @@
+@use "../foundation/import"as f;
+
+.l-header {
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    max-width: 78%;
+    margin: 0 auto;
+    padding-top: 40px;
+    align-items: center;
+  }
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    a {
+      display: block;
+
+      img {
+        width: 60px;
+      }
+
+      span {
+        color: f.$white;
+        font-size: 3.4rem;
+        letter-spacing: 5px;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 0 5rem;
+
+    a {
+      color: f.$white;
+      font-size: 2.4rem;
+      &:hover {
+        color: #939393;
+        transition: all .4s;
+      }
+    }
+  }
+
+  &.change-color {
+    background-color: #333333;
+    transition: all .4s;
+  }
+}
+
+//----------------------------------------
+//1050px
+//----------------------------------------
+@media screen and (max-width:1050px) {
+  .l-header__list {
+    gap: 0 2.8rem;
+    a {
+      font-size: 2rem;
+    }
+  }
+}
+
+//----------------------------------------
+//768px
+//----------------------------------------
+@media screen and (max-width:768px) {
+  .l-header__toggle {
+    position: fixed;
+    width: 60px;
+    height: 50px;
+    top: 20px;
+    right: 20px;
+    margin-left: auto;
+    transform: scale(-1, 1);
+    z-index: 999;
+
+    span {
+      position: absolute;
+      display: block;
+      width: 30px;
+      height: 2px;
+      background-color: #BEBEBE;
+      left: 15px;
+      transition: all .3s;
+
+      &:nth-child(1) {
+        top: 12px;
+      }
+
+      &:nth-child(2) {
+        top: 24px;
+      }
+
+      &:nth-child(3) {
+        top: 36px;
+      }
+    }
+
+    &.open span {
+      &:nth-child(1) {
+        top: 23px;
+        transform: rotate(315deg);
+      }
+
+      &:nth-child(2) {
+        width: 0;
+      }
+
+      &:nth-child(3) {
+        top: 23px;
+        transform: rotate(-315deg);
+      }
+    }
+  }
+
+  .l-header__inner {
+    position: fixed;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    height: 100vh;
+    background-color: #333333;
+    top: 0;
+    right: -120%;
+    margin-left: auto;
+    text-align: center;
+    transition: all 0.6s;
+    z-index: 998;
+  }
+
+  .l-header__inner.panelactive {
+    right: 0;
+    display: flex;
+  }
+
+  .l-header__logo {
+    padding-left: 0;
+    padding-bottom: 20%;
+  }
+
+  .l-header__list {
+    flex-direction: column;
+    align-items: baseline;
+    gap: 3rem 0;
+  }
+
+  .mv01 {
+    height: auto;
+  }
+}

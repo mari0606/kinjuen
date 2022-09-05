@@ -1,0 +1,67 @@
+@use "../foundation/import"as f;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; //1rem=10px
+}
+
+body {
+  font-family: 'Noto Serif JP', serif;
+  line-height: 1.7;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.wrapper {
+  max-width: 71%;//1400>1000px
+  margin: 0 auto;
+  text-align: center;
+}
+
+.inner {
+  max-width: 78%;//1400>1100px
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+.fade-in {
+  opacity: 0;
+  transition-duration: 1.2s;
+  transition-property: opacity, transform;
+}
+
+.fade-in-up {
+  transform: translate(0, 50px);
+}
+
+.fade-in-down {
+  transform: translate(0, -50px);
+}
+
+.fade-in-left {
+  transform: translate(-50px, 0);
+}
+
+.fade-in-right {
+  transform: translate(50px, 0);
+}
+
+.scroll-in {
+  opacity: 1;
+  transform: translate(0, 0);
+}

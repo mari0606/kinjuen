@@ -1,0 +1,522 @@
+@use "../foundation/import"as f;
+
+.mv01 {
+  .swiper-wrap {
+    position: relative;
+    max-width: 100vw;
+    overflow: hidden;
+  }
+
+  @keyframes zoom-in {
+    0% {
+      transform: scale(1);
+    }
+
+    100% {
+      transform: scale(1.2);
+    }
+  }
+
+  .swiper-slide-active .slide-img,
+  .swiper-slide-duplicate-active .slide-img,
+  .swiper-slide-prev .slide-img {
+    animation: zoom-in 10s linear 0s 1 normal both;
+  }
+
+  .slide-img img {
+    object-fit: cover;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .wrap {
+    overflow: hidden;
+  }
+
+  .mv-area {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+
+    &__tit {
+      color: f.$white;
+      font-size: 6.5rem;
+      letter-spacing: 0.3em;
+    }
+
+    &__note,
+    &__en {
+      color: f.$white;
+      font-size: 2rem;
+      letter-spacing: 0.2em;
+    }
+  }
+
+  .glowAnime span {
+    opacity: 0;
+  }
+
+  .glowAnime.glow span {
+    animation: glow_anime_on 2.5s ease-out forwards;
+  }
+
+  @keyframes glow_anime_on {
+    0% {
+      opacity: 0;
+      text-shadow: 0 0 0 #fff, 0 0 0 #fff;
+    }
+
+    50% {
+      opacity: 1;
+      text-shadow: 0 0 3px #fff, 0 0 5px #fff;
+    }
+
+    100% {
+      opacity: 1;
+      text-shadow: 0 0 0 #fff, 0 0 0 #fff;
+    }
+  }
+}
+
+@keyframes zoom-in {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+//----------------------------------------
+//section read
+//----------------------------------------
+.l-main {
+  .p-read {
+    height: auto;
+    background-image: url(../img/paper_02.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    padding: 5%;
+    gap: 0 2rem;
+
+    &__inner {
+      padding: 3% 10%;
+      text-align: left;
+      font-size: clamp(1rem, -0.066rem + 2.22vw, 1.875rem);
+      border: solid 1px f.$black;
+    }
+
+    &__cont {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      justify-content: space-between;
+      writing-mode: vertical-rl;
+    }
+
+    &__ttl {
+      font-weight: normal;
+    }
+
+    &__txt {
+      padding-top: 2rem;
+
+      &:last-of-type {
+        align-self: flex-end;
+      }
+    }
+  }
+}
+
+//----------------------------------------
+//parallax 
+//----------------------------------------
+
+.block {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  overflow: hidden;
+
+  &-txt__right {
+    position: relative;
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: f.$white;
+    text-align: right;
+    padding-right: 10%;
+    margin: 0;
+    top: 65%;
+    transform: translateY(-50%);
+  }
+
+  &-txt__left {
+    position: relative;
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: f.$white;
+    text-align: left;
+    padding-left: 15%;
+    margin: 0;
+    top: 80%;
+    transform: translateY(-50%);
+  }
+}
+
+.img-parallax {
+  position: absolute;
+  width: 100vmax;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  pointer-events: none;
+  filter: brightness(80%);
+  z-index: -1;
+}
+
+//----------------------------------------
+//section  room
+//----------------------------------------
+.p-room {
+  padding-top: 10%;
+}
+
+//----------------------------------------
+//section  food
+//----------------------------------------
+.p-food {
+  padding-top: 10%;
+}
+
+//----------------------------------------
+//section  spa
+//----------------------------------------
+.p-spa {
+  padding-top: 10%;
+}
+
+//----------------------------------------
+//section  news
+//----------------------------------------
+.p-news {
+  margin-top: 10%;
+  background-color: f.$beige;
+}
+
+.p-table {
+  margin: 0 auto;
+  padding-bottom: 10%;
+  width: 80%;
+
+  &__th,
+  &__td {
+    border-bottom: 1px solid f.$white;
+    border-collapse: collapse;
+    font-size: 1.6rem;
+    font-weight: normal;
+    padding: 3%;
+  }
+
+  &__th {
+    width: 30%;
+    border-right: 1px solid f.$white;
+  }
+
+  &__td {
+    width: 70%;
+    text-align: left;
+  }
+
+  a {
+    color: f.$black;
+  }
+}
+
+//----------------------------------------
+//section  accsess
+//----------------------------------------
+.p-access {
+  &__flex {
+    display: flex;
+    justify-content: space-around;
+
+    figure {
+      width: 50%;
+      margin: auto;
+    }
+  }
+
+  &__cont {
+    text-align: left;
+    padding-left: 5%;
+
+    dt,
+    dd {
+      font-size: 1.6rem;
+    }
+
+    dd:last-of-type {
+      padding-top: 2rem;
+    }
+
+    dt {
+      font-weight: bold;
+      padding-top: 2rem;
+    }
+  }
+
+  &__pay {
+    width: 60%;
+  }
+
+  &__map {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  &__car {
+    font-size: 1.8rem;
+  }
+}
+//----------------------------------------
+//section .tabs
+//----------------------------------------
+.tabs {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  margin: 0 auto;
+}
+
+/*タブのスタイル*/
+.tab_item {
+  width: calc(100%/3);
+  height: 50px;
+  border-bottom: 3px solid f.$beige;
+  background-color: f.$beige;
+  line-height: 50px;
+  font-size: 16px;
+  text-align: center;
+  color: #565656;
+  display: block;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.tab_item:hover {
+  opacity: 0.75;
+}
+
+/*ラジオボタンを全て消す*/
+input[name="tab_item"] {
+  display: none;
+}
+
+/*タブ切り替えの中身のスタイル*/
+.tab_content {
+  display: none;
+  padding: 4%;
+  clear: both;
+  overflow: hidden;
+}
+
+/*選択されているタブのコンテンツのみを表示*/
+#all:checked~#all_content,
+#programming:checked~#programming_content,
+#design:checked~#design_content {
+  display: block;
+}
+
+/*選択されているタブのスタイルを変える*/
+.tabs input:checked+.tab_item {
+  background-color: #333333;
+  color: #fff;
+}
+
+//----------------------------------------
+//section  reserve
+//----------------------------------------
+
+.p-reserve {
+  margin-top: 10%;
+
+  &__bg {
+    background-image: url(../img/mv_01.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+  }
+
+  &__txt {
+    margin: 0 auto;
+    padding-bottom: 4%;
+
+    p {
+      color: f.$white;
+      font-size: 1.8rem;
+      text-align: center;
+      padding-bottom: 1em;
+
+      &:last-of-type {
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+//----------------------------------------
+//1050px
+//----------------------------------------
+@media screen and (max-width:1050px) {
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .mv01 {
+    height: auto;
+  }
+
+  .mv-area {
+    &__tit {
+      font-size: 5.5rem;
+      line-height: 1.2;
+    }
+
+    &__note,
+    &__en {
+      font-size: 1.6rem;
+    }
+  }
+
+
+  .p-access__map {
+    width: 80%;
+
+    iframe {
+      width: 100%;
+    }
+  }
+
+  .block {
+    height: 400px;
+
+  }
+}
+
+//----------------------------------------
+//768px
+//----------------------------------------
+
+@media screen and (max-width:768px) {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .mv01 {
+    height: auto;
+
+    .slide-img img {
+      height: 100%;
+    }
+
+    .mv-area__tit {
+      font-size: 3rem;
+      letter-spacing: 0.3em;
+    }
+
+    .mv-area__note,
+    .mv-area__en {
+      font-size: 1.2rem;
+      letter-spacing: 0.2em;
+    }
+  }
+
+  .l-main {
+
+
+    .p-read__inner {
+      writing-mode: unset;
+      padding: 2% 3%;
+    }
+
+    .block {
+      height: 200px;
+
+      &-txt__right {
+        padding-right: 10%;
+        font-size: 1.2rem;
+      }
+
+      &-txt__left {
+        padding-left: 15%;
+        font-size: 1.2rem;
+      }
+    }
+
+
+    .p-access__flex {
+      flex-direction: column;
+      width: 90%;
+      margin: 0 auto;
+
+      figure {
+        width: 100%;
+      }
+    }
+
+    .p-access__map {
+      width: 100%;
+
+      iframe {
+        width: 100%;
+      }
+    }
+
+    .p-access {
+
+      &__cont dt,
+      &__cont dd {
+        font-size: 1.4rem;
+      }
+    }
+
+    .p-access__pay {
+      width: 100%;
+    }
+
+    .p-table {
+      width: 100%;
+
+      a {
+        font-size: 1.2rem;
+      }
+    }
+
+    .tab-item {
+      font-size: 1.2rem;
+    }
+
+    .p-reserve {
+
+      &__txt p {
+        font-size: 1.2rem;
+      }
+    }
+
+    .p-news {
+      margin-top: 15%;
+    }
+  }
+}

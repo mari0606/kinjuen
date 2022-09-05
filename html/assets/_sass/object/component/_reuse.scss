@@ -1,0 +1,536 @@
+@use "../../foundation/import"as f;
+
+//----------------------------------------
+//mv .c-scrolldown
+//----------------------------------------
+.c-scrolldown {
+  position: absolute;
+  width: 1px;
+  left: 50%;
+  bottom: 0;
+  height: 80px;
+  background: #797979;
+  z-index: 2;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 1px;
+    height: 80px;
+    background: f.$white;
+    /*線の動き1.4秒かけて動く。永遠にループ*/
+    animation: dnmove 1.4s ease-in-out infinite;
+    opacity: 0;
+  }
+}
+
+@keyframes dnmove {
+  0% {
+    height: 0;
+    top: 0;
+    opacity: 0;
+  }
+
+  30% {
+    height: 60px;
+    opacity: 1;
+  }
+
+  100% {
+    height: 0;
+    top: 80px;
+    opacity: 0;
+  }
+}
+
+//----------------------------------------
+//.c-box
+//----------------------------------------
+.c-box {
+  position: relative;
+  display: flex;
+
+  &__item {
+    width: 50%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 55%;
+      height: 100%;
+      top: 5%;
+      left: 0;
+      background-color: f.$beige;
+      z-index: -1;
+    }
+  }
+
+  &__tit {
+    margin: 0 auto;
+    padding-top: 12%;
+    font-size: clamp(2.188rem, 1.193rem + 4.24vw, 4.375rem);
+    font-weight: normal;
+  }
+
+  &__txt {
+    padding: 3rem;
+    font-size: 2rem;
+    text-align: left;
+
+  }
+
+  figure {
+    width: 50%;
+  }
+
+  &__subitem {
+    margin-top: 5.8%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__flex {
+    width: 50%;
+    display: flex;
+    gap: 3%;
+  }
+}
+
+.c-box-right {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 5.8%;
+
+  &__item {
+    width: 50%;
+    padding-left: 5%;
+  }
+
+  &__tit {
+    font-size: 3rem;
+    font-weight: normal;
+    padding-top: 12%;
+    text-align: left;
+  }
+
+  &__txt {
+    padding-top: 5%;
+    font-size: 1.8rem;
+    text-align: left;
+  }
+
+  figure {
+    width: 50%;
+  }
+
+  .space {
+    margin-top: 0.8%;
+  }
+
+}
+
+.c-box-left {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 5.8%;
+
+  &__item {
+    width: 50%;
+    padding-left: 5%;
+  }
+
+  &__tit {
+    font-size: 3rem;
+    font-weight: normal;
+    padding-top: 12%;
+    text-align: left;
+  }
+
+  &__txt {
+    padding-top: 5%;
+    font-size: 1.8rem;
+    text-align: left;
+  }
+
+  figure {
+    width: 50%;
+  }
+}
+
+//----------------------------------------
+//.c-btn
+//----------------------------------------
+.c-btn {
+  font-size: 1.6rem;
+  border-radius: 30px;
+  padding: 1%;
+  border: 1px solid f.$white;
+  width: 20rem;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 4%;
+  color: f.$white;
+  display: block;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.45);
+    transition: .3s;
+  }
+}
+
+//----------------------------------------
+//.c-post
+//----------------------------------------
+.c-post {
+  text-align: center;
+  margin: 0 auto;
+  padding: 5% 0;
+
+  &__logo {
+    width: 4%;
+    margin: 0 auto;
+  }
+
+  &__tit {
+    font-size: 3.5rem;
+    padding-top: 2%;
+  }
+}
+
+
+.c-post-white {
+  text-align: center;
+  margin: 0 auto;
+  padding: 5% 0;
+
+  &__logo {
+    width: 4%;
+    margin: 0 auto;
+  }
+
+  &__tit {
+    color: f.$white;
+    font-size: 3.5rem;
+    padding-top: 2%;
+  }
+}
+
+//----------------------------------------
+//#page-top
+//----------------------------------------
+#page-top  {
+  position: fixed;
+  background-color: #333333;
+  right: 10px;
+  bottom: 10px;
+  padding: 20px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  transition: opacity .5s;
+
+  a{
+    color: #fff;
+    font-size: 1.5rem;
+  }
+
+  &:hover {
+    opacity: 0.8;
+    transition: opacity .5s;
+  }
+}
+
+//----------------------------------------
+//.c-modal
+//----------------------------------------
+.c-modal {
+  display: none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 30;
+
+  &__bg {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(30, 30, 30, 0.8);
+  }
+
+  &__wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50vw;
+    background-color: f.$white;
+  }
+
+  &__close {
+    position: absolute;
+    cursor: pointer;
+    font-size: 3rem;
+    top: 0.5rem;
+    right: 2rem;
+  }
+
+  &__contents {
+    text-align: center;
+  }
+
+  &__tit {
+    font-size: 2.2rem;
+    font-weight: f.$bold;
+    padding: 5% 0;
+  }
+
+  &__inner {
+    display: inline-block;
+    // width: 60%;
+    padding-bottom: 5%;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    // gap: 2rem 0;
+    text-align: left;
+    font-size: 1.6rem;
+    white-space: nowrap;
+    
+&-list {
+  display: flex;
+  padding-bottom: 2rem;
+  &:first-of-type {
+    padding-bottom: 0.5rem;
+  }
+
+}
+    
+  }
+
+  &__subtit {
+    display: inline-block;
+    width: 40%;
+  }
+  dd {
+    width: 60%;
+  }
+
+  &__form-btn {
+    text-align: center;
+    margin-top: 2rem;
+
+    input {
+      color: #ffffff;
+      padding: 1em 2em;
+      background-color: #707070;
+      border-radius: 30px;
+    }
+  }
+
+  .c-select {
+    width: 1.8em;
+    border: #797979 1px solid;
+    border-radius: 10px;
+    text-align: center;
+
+    &__years {
+      width: 3em;
+      border: #797979 1px solid;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    &__type {
+      width: 10em;
+      border: #797979 1px solid;
+      border-radius: 10px;
+      text-align: center;
+    }
+  }
+}
+//----------------------------------------
+//1050px
+//----------------------------------------
+
+@media screen and (max-width:1050px) {
+  .c-box {
+    align-items: center;
+
+    &__tit {
+      padding-top: 15%;
+    }
+
+    &__txt {
+      padding: 2rem;
+      font-size: 1.8rem;
+    }
+
+    &-right {
+      align-items: center;
+
+      &__item {
+        padding-left: 0;
+      }
+
+      &__tit {
+        font-size: 2.8rem;
+        padding-top: 0;
+      }
+
+      &__txt {
+        padding-top: 3%;
+        font-size: 1.6rem;
+      }
+    }
+
+    &-left {
+      align-items: center;
+
+
+      &__tit {
+        font-size: 2.8rem;
+        padding-top: 0;
+      }
+
+      &__txt {
+        padding-top: 3%;
+        font-size: 1.6rem;
+      }
+    }
+
+    &__subitem {
+      padding-top: 10%;
+    }
+  }
+}
+
+//----------------------------------------
+//768px 
+//----------------------------------------
+@media screen and (max-width:768px) {
+
+  .c-scrolldown {
+    height: 40px;
+  }
+
+  .c-box {
+    flex-direction: column;
+    margin: 10% auto 0;
+
+    &__item::before {
+      width: 100%;
+    }
+
+    &__inner {
+      padding: 0 2%;
+    }
+
+    &__item {
+      width: 100%;
+    }
+
+    &__txt {
+      font-size: 1.6rem;
+    }
+
+    figure {
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    &__flex {
+      width: 100%;
+      margin-top: 1rem;
+    }
+
+    &__subitem {
+      flex-direction: column-reverse;
+    }
+
+    &-left {
+      flex-direction: column-reverse;
+
+      &__item {
+        width: 100%;
+        padding-top: 10%;
+        padding-left: 0;
+      }
+
+      &__txt {
+        font-size: 1.3rem;
+      }
+
+      figure {
+        width: 100%;
+        margin-top: 1rem;
+      }
+    }
+
+    &-right {
+      flex-direction: column;
+
+      &__item {
+        width: 100%;
+        padding-top: 10%;
+      }
+
+      &__txt {
+        font-size: 1.3rem;
+      }
+
+      figure {
+        width: 100%;
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  .c-post {
+    &__tit {
+      font-size: 2.5rem;
+    }
+
+    &-white__tit {
+      font-size: 2.5rem;
+    }
+  }
+
+  .c-btn {
+    margin: 10% auto;
+  }
+  .c-modal {
+    &__wrapper {
+      width: 80vw;
+    }
+    &__form {
+      font-size: 1.4rem;
+    }
+    &__subtit {
+      font-weight: f.$bold;
+  }
+  .c-modal__tit {
+    font-size: 2rem;
+    padding: 10% 0;
+  }
+  .c-select ,.c-select__years,.c-select__type {
+    border-radius: 5px;
+  }
+}
+
+#page-top  {
+  right: 5px;
+  bottom: 5px;
+  padding: 10px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+
+  a{
+    font-size: 1.2rem;
+  }
+}
+}
