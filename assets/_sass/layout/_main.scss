@@ -285,6 +285,7 @@
     font-size: 1.8rem;
   }
 }
+
 //----------------------------------------
 //section .tabs
 //----------------------------------------
@@ -301,7 +302,7 @@
   border-bottom: 3px solid f.$beige;
   background-color: f.$beige;
   line-height: 50px;
-  font-size: 16px;
+  font-size: 1.6rem;
   text-align: center;
   color: #565656;
   display: block;
@@ -466,34 +467,37 @@ input[name="tab_item"] {
     }
 
 
-    .p-access__flex {
-      flex-direction: column;
-      width: 90%;
-      margin: 0 auto;
-
-      figure {
-        width: 100%;
-      }
-    }
-
-    .p-access__map {
-      width: 100%;
-
-      iframe {
-        width: 100%;
-      }
-    }
-
     .p-access {
+      &__flex {
+        flex-direction: column;
+        width: 90%;
+        margin: 0 auto;
+
+        figure {
+          width: 100%;
+        }
+      }
+
+      &__map {
+        width: 100%;
+
+        iframe {
+          width: 100%;
+        }
+      }
 
       &__cont dt,
       &__cont dd {
         font-size: 1.4rem;
       }
-    }
 
-    .p-access__pay {
-      width: 100%;
+      &__cont dd {
+        color: #000000;
+      }
+
+      &__pay {
+        width: 100%;
+      }
     }
 
     .p-table {

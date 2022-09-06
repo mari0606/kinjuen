@@ -442,8 +442,8 @@ li {
     position: fixed;
     width: 60px;
     height: 50px;
-    top: 20px;
-    right: 20px;
+    top: 5px;
+    right: 5px;
     margin-left: auto;
     transform: scale(-1, 1);
     z-index: 999;
@@ -480,7 +480,8 @@ li {
   .l-header__inner {
     position: fixed;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-top: 50%;
     width: 80%;
     height: 100vh;
     background-color: #333333;
@@ -769,7 +770,7 @@ li {
   border-bottom: 3px solid #F0EBE1;
   background-color: #F0EBE1;
   line-height: 50px;
-  font-size: 16px;
+  font-size: 1.6rem;
   text-align: center;
   color: #565656;
   display: block;
@@ -910,6 +911,9 @@ input[name=tab_item] {
   }
   .l-main .p-access__cont dt, .l-main .p-access__cont dd {
     font-size: 1.4rem;
+  }
+  .l-main .p-access__cont dd {
+    color: #000000;
   }
   .l-main .p-access__pay {
     width: 100%;
@@ -1374,7 +1378,7 @@ input[name=tab_item] {
     padding-left: 0;
   }
   .c-box-left__txt {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
   .c-box-left figure {
     width: 100%;
@@ -1388,7 +1392,7 @@ input[name=tab_item] {
     padding-top: 10%;
   }
   .c-box-right__txt {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
   .c-box-right figure {
     width: 100%;
@@ -1416,16 +1420,22 @@ input[name=tab_item] {
     font-size: 2rem;
     padding: 10% 0;
   }
-  .c-modal .c-select, .c-modal .c-select__years, .c-modal .c-select__type {
+  .c-modal .c-select,
+.c-modal .c-select__years,
+.c-modal .c-select__type {
     border-radius: 5px;
+    color: #000000;
+    text-align: center;
   }
   #page-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     right: 5px;
-    bottom: 5px;
+    bottom: 10px;
     padding: 10px;
     width: 50px;
     height: 50px;
-    text-align: center;
   }
   #page-top a {
     font-size: 1.2rem;

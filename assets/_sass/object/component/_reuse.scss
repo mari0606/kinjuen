@@ -219,7 +219,7 @@
 //----------------------------------------
 //#page-top
 //----------------------------------------
-#page-top  {
+#page-top {
   position: fixed;
   background-color: #333333;
   right: 10px;
@@ -230,7 +230,7 @@
   border-radius: 50%;
   transition: opacity .5s;
 
-  a{
+  a {
     color: #fff;
     font-size: 1.5rem;
   }
@@ -299,22 +299,24 @@
     text-align: left;
     font-size: 1.6rem;
     white-space: nowrap;
-    
-&-list {
-  display: flex;
-  padding-bottom: 2rem;
-  &:first-of-type {
-    padding-bottom: 0.5rem;
-  }
 
-}
-    
+    &-list {
+      display: flex;
+      padding-bottom: 2rem;
+
+      &:first-of-type {
+        padding-bottom: 0.5rem;
+      }
+
+    }
+
   }
 
   &__subtit {
     display: inline-block;
     width: 40%;
   }
+
   dd {
     width: 60%;
   }
@@ -352,6 +354,7 @@
     }
   }
 }
+
 //----------------------------------------
 //1050px
 //----------------------------------------
@@ -461,7 +464,7 @@
       }
 
       &__txt {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
       }
 
       figure {
@@ -479,7 +482,7 @@
       }
 
       &__txt {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
       }
 
       figure {
@@ -502,35 +505,46 @@
   .c-btn {
     margin: 10% auto;
   }
+
   .c-modal {
     &__wrapper {
       width: 80vw;
     }
+
     &__form {
       font-size: 1.4rem;
     }
+
     &__subtit {
       font-weight: f.$bold;
-  }
-  .c-modal__tit {
-    font-size: 2rem;
-    padding: 10% 0;
-  }
-  .c-select ,.c-select__years,.c-select__type {
-    border-radius: 5px;
-  }
-}
+    }
 
-#page-top  {
-  right: 5px;
-  bottom: 5px;
-  padding: 10px;
-  width: 50px;
-  height: 50px;
-  text-align: center;
+    .c-modal__tit {
+      font-size: 2rem;
+      padding: 10% 0;
+    }
 
-  a{
-    font-size: 1.2rem;
+    .c-select,
+    .c-select__years,
+    .c-select__type {
+      border-radius: 5px;
+      color: #000000;
+      text-align: center;
+    }
   }
-}
+
+  #page-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 5px;
+    bottom: 10px;
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+
+    a {
+      font-size: 1.2rem;
+    }
+  }
 }
